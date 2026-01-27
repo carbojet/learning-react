@@ -1,0 +1,34 @@
+{
+  "name": "learning-react",
+  "version": "1.0.0",
+  "description": "this is a learning react by Sunil Kumar Mutaka",
+  "keywords": [
+    "learning",
+    "react",
+    "Akshay",
+    "Saini"
+  ],
+  "homepage": "https://github.com/carbojet/learning-react#readme",
+  "bugs": {
+    "url": "https://github.com/carbojet/learning-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carbojet/learning-react.git"
+  },
+  "license": "ISC",
+  "author": "Sunil Kumar Mutaka",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "browserlist": [
+    "last 2 version"
+  ]
+}

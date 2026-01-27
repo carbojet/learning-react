@@ -1,6 +1,5 @@
-
-
-
+import React from "react";
+import ReactDOM from "react-dom/client";
 const renderBlock = React.createElement(
   "div",
   { id: "parent" },
