@@ -90,3 +90,49 @@
     2. **Install Parcel:** `npm install -D parcel`
     3. **Start Development:** `npx parcel index.html`
 
+# Episode - 4
+
+    Episode 4: Building the "Food Orbit" App 🍕
+        In this episode, we transition from theoretical React to building a real-world Food Ordering Application. We will focus on the power of Functional Components and the art of making them reusable.
+
+        🏗️ The Layout Plan
+        Before coding, we define our high-level component hierarchy. This ensures our UI is organized and predictable.
+
+        Header
+        Logo (Branding)
+        Navigation Items (Home, About, Cart)
+
+        Body
+        Search Bar (User Interaction)
+        Restaurant Container (The Grid)
+        Restaurant Card (The reusable unit)
+
+        Footer
+        Copyright & Links
+
+        🛠️ Core Concepts Explored
+        1. Component Composition (Parent-Child)
+        We are building a "Tree" of components. The AppLayout acts as the parent, housing the Header, Body, and Footer. This structure allows us to manage the layout in one place while keeping individual components small and focused.
+
+        2. The Power of Props
+        Props (Properties) are the arguments we pass into functional components. Think of them as the "inputs" for our UI functions.
+        We use props to make the Restaurant Card dynamic.
+        Instead of hardcoding a card for every restaurant, we create one "template" and pass different data (image, name, rating) into it.
+
+        3. Iterating Over Data (The .map() pattern)
+        Real-world apps don't hardcode elements. We simulate a data fetch (using a mock object) and use the JavaScript .map() method to:
+        Loop through a list of restaurants.
+        Automatically generate a Restaurant Card for every item in the list.
+        Pass the restaurant object as a prop to each card.
+
+        📝 Learning Objectives
+        [ ] Understand how to structure a React project into logical folders.
+        [ ] Master the use of Props to pass data down the component tree
+        [ ] Implement Config-driven UI (handling data from objects/APIs).
+        [ ] Use unique keys in lists to optimize React's rendering performance.
+        Pro Tip: When iterating over a list, never forget the key prop! It's the "ID card" React uses to keep track of which element is which during updates.
+
+        How to Preview
+        Ensure you have Parcel installed (npm install).
+        Run the development server: npx parcel index.html.
+        Open localhost:1234 in your browser.
