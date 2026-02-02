@@ -28,6 +28,16 @@
     cursor: pointer;
 }
 
+.nav-item ul li button.login-btn{
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
 /* Body styles */
 .body{
     padding: 20px;

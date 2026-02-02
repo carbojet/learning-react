@@ -174,3 +174,60 @@
         [x] How Hooks allow functional components to manage complex data.
 
         [x] The difference between the Virtual DOM and the Real DOM.
+
+# Episode - 6
+    # Episode 6: Dynamic Search & API Integration
+
+    This repository contains the code for **Episode 6**, where we transition from a static UI to a dynamic, data-driven application. We focus on the lifecycle of a React component, specifically how to fetch external data and manage it using state.
+
+    ---
+
+    ## 🛠️ Concepts Covered
+
+    ### 1. Data Fetching (The `fetch` API)
+
+    We integrated real-world data by making asynchronous calls to an external API.
+
+    * **Method:** Used the global `fetch()` method to retrieve data.
+    * **Async/Await:** Implemented modern JavaScript syntax to handle promises and ensure the UI waits for data before rendering.
+    * **JSON Parsing:** Handled the transformation of API responses into usable JavaScript objects.
+
+    ### 2. State Management with `useState`
+
+    To keep our UI in sync with our data, we utilized the `useState` hook.
+
+    * **The Render Cycle:** Learned how updating state triggers React to re-render components, ensuring the view always reflects the latest data.
+    * **Variable Persistence:** Unlike regular variables, state variables persist across renders, allowing us to store both our full data list and our filtered results.
+
+    ### 3. Event Handling in Search
+
+    A search feature requires listening to user input. We implemented several event listeners to create a seamless UX:
+
+    * **`onChange`**: The "heart" of the search bar. It captures every keystroke to update our `searchText` state in real-time.
+    * **`onClick`**: Used for the search button to trigger filtering logic.
+    * **`onKeyDown` / `onKeyPress**`: Enhanced accessibility by allowing users to trigger a search using the **Enter** key or clear input with **Escape**.
+
+    ---
+
+    ## 🏗️ How it Works
+
+    1. **Mounting:** When the component loads, a fetch call is triggered.
+    2. **State Update:** Once the data arrives, we update our state, which triggers a re-render to display the items.
+    3. **User Input:** As a user types in the search bar (`onChange`), the `searchText` state updates.
+    4. **Filtering:** On click or key press, we filter the original data set based on the `searchText` and update the UI with the results.
+
+    ---
+
+    ## 💻 Code Highlight: The Search Logic
+
+    ```javascript
+    const [allData, setAllData] = useState([]);
+    const [filteredData, setFilteredData] = useState([]);
+    const [searchText, setSearchText] = useState("");
+
+    const handleSearch = () => {
+    const filtered = allData.filter((item) =>
+        item.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFilteredData(filtered);
+    };

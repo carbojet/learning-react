@@ -1,4 +1,5 @@
 import { LOGO_URL } from "../utils/constants";
+import { useState } from "react";
 
 //logo component
 const Logo = () => {
@@ -14,6 +15,7 @@ const Logo = () => {
 }
 //nav items component
 const NavItems = () => {
+  const [btnName, setBtnName] = useState("Login");
   return (
     <div className="nav-container">
       <div className="nav-items">
@@ -21,7 +23,18 @@ const NavItems = () => {
           <li>Home</li>
           <li>About</li>
           <li>Contact</li>
-          <li>Cart</li> 
+          <li>Cart</li>
+          <li>
+            <button
+              className="login-btn"
+              onClick={() => {
+                console.log("Button clicked");
+                setBtnName(btnName === "Login" ? "Logout" : "Login");
+              }}
+            >
+              {btnName}
+            </button>
+          </li>
         </ul>
       </div>
     </div>

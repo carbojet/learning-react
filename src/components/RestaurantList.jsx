@@ -1,12 +1,13 @@
 //restaurant card component
 const RestaurantCard = (props) => {
-  const { image, name, cuisine, rating } = props.restaurant;
+  const baseImageUrl = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+  const { cloudinaryImageId, name, cuisines, avgRating } = props.restaurant;
   return (
     <div className="restaurant-card">
-      <img src={image} alt={name} />
+      <img src={baseImageUrl + cloudinaryImageId} alt={name} />
       <h3>{name}</h3>
-      <p>{cuisine}</p>
-      <p>Rating: {rating}</p>
+      <p>{cuisines}</p>
+      <p>Rating: {avgRating}</p>
     </div>
   );
 }
@@ -18,8 +19,8 @@ const RestaurantList = (props) => {
         {restaurants.map((restaurant) => {
           return (
             <RestaurantCard
-              restaurant={restaurant}
-              key={restaurant.id} 
+              restaurant={restaurant.info}
+              key={restaurant.info.id} 
             />
           );
         })}
